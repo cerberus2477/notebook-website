@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,900;1,300&display=swap" rel="stylesheet">
+    <title>Főoldal</title>
+    <script src="./app.js" defer></script>
+</head>
+
+<body onload="resetForm(), rotateStickyNotes(), colourStickynotes()">
+    <header>
+        <div class="container">
+            <h1>Asztali alkalmazások</h1>
+        </div>
+
+        <nav>
+            <a href="./index.html" class="active">Föoldal</a>
+            <a href="./valtozokEsTombok.html">Változók és tömbök</a>
+            <a href="./joEsHibasProgram.html">Jó és hibás program</a>
+            <a href="./vezerlesiSzerkezetek.html">Vezérlési szerkezetek</a>
+        </nav>
+    </header>
+
+
+    <main>
+        <h2>Főoldal</h2>
+
+        <p>Ezen az oldalon a programozásnéhány alapfogalmát ismertetjük. Ha úgy gondolod már mindent tudsz, töltsd ki a tesztünket :)</p>
+
+
+        <form>
+            <fieldset>
+                <legend>Mit nem használunk több ágú szelekciónál?
+                </legend>
+                <ul>
+                    <li>
+                        <input type="radio" name="q1" id="q1.1">
+                        <label for="q1.1">Else if</label>
+
+                    </li>
+                    <li>
+                        <input type="radio" name="q1" id="q1.2">
+                        <label for="q1.2">Case</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="q1" id="q1.3">
+                        <label for="q1.3">While</label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset>
+                <legend>Mi nem volt probléma az első programmal a jó és rossz kód oldalon?
+                </legend>
+                <ul>
+                    <li>
+                        <input type="radio" name="q2" id="q2.1">
+                        <label for="q2.1">Változónevek</label>
+
+                    </li>
+                    <li>
+                        <input type="radio" name="q2" id="q2.2">
+                        <label for="q2.2">Átláthatóság</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="q2" id="q2.3">
+                        <label for="q2.3">Tesztelés</label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset>
+                <legend>Melyik típusú változónak nem adhatjuk meg a -180 értéket?
+                </legend>
+                <ul>
+                    <li>
+                        <input type="radio" name="q3" id="q3.1">
+                        <label for="q3.1">UINT32</label>
+
+                    </li>
+                    <li>
+                        <input type="radio" name="q3" id="q3.2">
+                        <label for="q3.2">INT32</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="q3" id="q3.3">
+                        <label for="q3.3">INT64</label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset>
+                <legend>Melyik állítás hamis?
+                </legend>
+                <ul>
+                    <li>
+                        <input type="radio" name="q4" id="q4.1">
+                        <label for="q4.1">A tömb elemeinek indexe 1-el kezdődik</label>
+
+                    </li>
+                    <li>
+                        <input type="radio" name="q4" id="q4.2">
+                        <label for="q4.2">A tömbök homogének</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="q4" id="q4.3">
+                        <label for="q4.3">Meg lehet adni egy tömb elemeit egyenként</label>
+                    </li>
+                </ul>
+            </fieldset>
+            <div class="endOfForm">
+                <p id="scoreDisplay"></p>
+                <div>
+                    <input type="button" value="Ellerőrzés" onclick="checkAnswers()">
+                    <input type="reset" value="Újrakezdés" onclick="resetForm()">
+                </div>
+            </div>
+        </form>
+
+
+        <h3>A készítőkről:</h3>
+        <div class="containerStickynotes">
+
+            <div class="stickynote green">
+                <h5>Bakó Borka</h5>
+                <ul>
+                    <li>Dokumentáció</li>
+                    <li>Tartalom</li>
+                </ul>
+            </div>
+
+            <div class="stickynote green">
+                <h5>Nacsa Levente</h5>
+                <ul>
+                    <li>C# példák</li>
+                    <li>Tartalom</li>
+                    <li>HTML</li>
+                </ul>
+            </div>
+
+            <div class="stickynote green">
+                <h5>Tábor Tünde</h5>
+                <ul>
+                    <li>CSS</li>
+                    <li>HTML</li>
+                    <li>Javascript</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- <div class="sidemarker">Forrás: linkilinks.link</div> -->
+    </main>
+
+    <div class="spaceholder"></div>
+
+</body>
+
+</html>

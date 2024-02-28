@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,900;1,300&display=swap" rel="stylesheet">
+    <title>Vezérlési szerkezetek</title>
+    <script src="./app.js" defer></script>
+</head>
+
+<body onload="rotateStickyNotes(), colourStickynotes()">
+    <header>
+        <div class="container">
+            <h1>Asztali alkalmazások</h1>
+        </div>
+
+        <nav>
+            <a href="./index.html">Föoldal</a>
+            <a href="./valtozokEsTombok.html">Változók és tömbök</a>
+            <a href="./joEsHibasProgram.html">Jó és hibás program</a>
+            <a href="./vezerlesiSzerkezetek.html" class="active">Vezérlési szerkezetek</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Vezérlési szerkezetek</h2>
+
+
+        <h3>Szelekciók</h3>
+        <p>Szelekció (elágazás): olyan vezérlési szerkezet, amelyben egy logikai feltétel hatására a program végrehajtása két vagy több irányra bomlik szét. A feltételben szereplő kifejezésnek minden esetben logikai értéket kell visszaadnia. </p>
+
+        <h4>Egy ágú szelekció</h4>
+        <p>Feltételtől függő végrehajtás, azaz az egyirányú elágazás (ha akkor → if): a megadott feltétel teljesülésétől függ az adott szekvencia végrehajtása.</p>
+
+        <div class="containerStickynotes">
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>string b = "nemüres";
+if(Equals(b, ""))
+{
+b="BÁ";
+}
+Console.WriteLine(b);</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>nemüres</p>
+                </div>
+            </div>
+
+
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>int szam = 3;
+if(szam % 2 == 0)
+{
+Console.WriteLine("Ez a szám páros.");
+}</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>(semmi, mert a szam nem felelt meg a feltételnek, így az "if"-en belüli rész nem futott le.)</p>
+                </div>
+            </div>
+
+
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>bool paros = true;
+int szam = 4
+string b = "nemüres"
+
+if(paros)
+{
+Console.WriteLine(b + szam);
+}</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>4nemüres</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- <p>Az első kódban, a második kódnál igaz a feltétel, így a a két parancs lefut, a harmadiknál szintúgy.</p> -->
+
+
+
+
+
+
+
+
+        <h4>Két ágú szelekció</h4>
+        <p>Döntéstől függő végrehajtás, azaz a kétirányú elágazás (ha akkor különben → if else): a megadott feltétel igazságtartalmától függően két különböző szekvencia végrehajtása között dönt a program.</p>
+        <div class="containerStickynotes">
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>string b = "BÁ";
+if(b == "")
+{
+    b = "BÉ";
+}
+else
+{
+    Console.WriteLine(b);
+}</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>BÁ</p>
+                </div>
+            </div>
+
+
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>int szam = 5;
+if(szam%2==0) {
+    Console.WriteLine($"Ez a szám ({szam1}) páros. ");
+} else {
+    Console.WriteLine($"Ez a szám ({szam1}) páratlan. ");
+}</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>Ez a szám (5) páratlan.</p>
+                </div>
+            </div>
+
+
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>int szam = 120;
+string b = "BÁ";
+if(szam &gt; 100 && b.Length>8) {
+    Console.WriteLine($"Hosszú szám: ({szam}), hosszú szó: ({b}).");
+} else {
+    Console.WriteLine($"A Szám ({szam}) és/vagy a szó ({b}) kicsi (rövid).");
+}</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>A Szám (120) és/vagy a szó (BÁ) kicsi (rövid)."</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <h4>Több ágú szelekció else if használatával</h4>
+        <p>A kétirányú elágazás kibővíthető tetszés szerinti menyiséggel.</p>
+
+        <div class="containerStickynotes">
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>int szam = Convert.ToInt32(Console.ReadLine());
+if(szam &lt; = 0) { 
+    Console.WriteLine("A szám nem lehet kevesebb 1-nél");
+} else if(szam>= 5) {
+    Console.WriteLine("A szám nem lehet nagyobb 5-nél");
+} else {
+    if(szam == 1) {
+        Console.WriteLine("A szám egy");
+    } else if(szam == 2) {
+        Console.WriteLine("A szám kettő");
+    } else if(szam == 3) {
+        Console.WriteLine("a szám három");
+    } else if(szam == 4) {
+        Console.WriteLine("a szám négy");
+    } else if(szam == 5) {
+        Console.WriteLine("a szám öt");
+    }</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>(a kimenet a felhasználó által megadott számtól függ.)</p>
+                </div>
+            </div>
+
+
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>string gyümi = "alma";
+    if(Equals(gyümi, "körte")) {
+Console.WriteLine("Ez egy körte, vigyázz nagyon finom");
+    }
+if(Equals(gyümi, "alma")) {
+    Console.WriteLine("Ez egy alma, vigyázz nagyon finom");
+    }
+if(Equals(gyümi, "banán")) {
+    Console.WriteLine("Ez egy banán, vigyázz nagyon finom");
+    }
+if(Equals(gyümi, "szőlő")) {
+    Console.WriteLine("Ez egy szőlő, vigyázz nagyon finom");
+}</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>Ez egy alma, vigyázz nagyon finom</p>
+                </div>
+            </div>
+
+
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>string bÁLNA= "aLMA";
+if (Equals(bÁLNA, "aLMA"))
+{
+    Console.WriteLine("Szedd ki a capsLock-ot, egyébként a bÁLNA nem Alma");
+}
+else if (Equals(bÁLNA, ""))
+{
+    Console.WriteLine("Üres a bÁLNA");
+}
+else
+{
+    Console.WriteLine("megfelelő érték");
+}</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>Szedd ki a capsLock-ot, egyébként a bÁLNA nem Alma</p>
+                </div>
+            </div>
+        </div>
+
+        <h4>Több ágú szelekció switch case használatával</h4>
+        <p>A kiválasztást többirányú elágazás, pontosabban érték szerinti elágazás (switch-case szerkezet) segítségével is megvalósíthatjuk, ez egyszerűbben olvasható kódot eredményez valamint picivel gyorsabban fut mint az if-elsek halmozása.
+        </p>
+
+        <div class="containerStickynotes">
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>string Gyümmi = "alma";
+switch(Gyümmi) {
+    case "körte":
+        Console.WriteLine("A körte fincsi");
+        break;
+    case "bálna":
+        Console.WriteLine("A bÁLNA NAGY, és amúgy NEM GYÜMÖLCS");
+        break;
+    case "paradicsom":
+        Console.WriteLine("Ez egy paradicsom, gratulálok!");
+        break;
+    case "alma":
+        Console.WriteLine("Alma.");
+        break;
+    }</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>Alma.</p>
+                </div>
+            </div>
+
+
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>int num = 1;
+switch(num) {
+    case 156378:
+        Console.WriteLine("Ez egy nagy szám");
+        break;
+    case -156378:
+        Console.WriteLine("Ez egy kis szám");
+        break;
+    default:
+        Console.WriteLine("A szám nem 156378 vagy -156378.");
+        break;
+}</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>A szám nem 156378 vagy -156378.</p>
+                </div>
+            </div>
+
+
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>int q = 8;
+switch (q)
+        {
+    case 2:
+        Console.WriteLine("a 2 1. hatványa");
+        break;
+    case 4:
+        Console.WriteLine("a 2 2. hatványa");
+        break;
+    case 8:;
+        Console.WriteLine("a 2 3. hatványa");
+        break;       
+    default:
+        Console.WriteLine("nem a 2-nek egy és három közötti hatványa");
+       break;
+}</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>a 2 3. hatványa</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <h3>Ciklusok</h3>
+        <p>Iteráció (ciklus): olyan programszerkezet, amely egy utassítássorozatot ismétel.A ciklus részei: ciklusfej–a ciklusfejben határozzuk meg azokat a feltételeket, amelyek teljesülése esetén a program végrehajtja a ciklusmagot / ciklusmag–az a szekvencia,
+            amelyet a program ismételten végrehajt.</p>
+
+        <h4>Elöltesztelő ciklus(while)</h4>
+        <p>A ciklusmag végrehajtását meghatározó feltétel (ez a bentmaradás feltétele) a ciklusfejben van, ennek vizsgálata egyszer mindenképpen megtörténik. Megjegyzés: Előfordulhat, hogy a ciklusmag sohasem hajtódik végre.Az elöltesztelő ciklus megvalósítása
+            mindig előreolvasással történik, azaz a feltételben vizsgált adatot előbb meg kell határozni, és azután vizsgáljuk meg, hogya megadott érték megfelel-e a ciklusmag lefutási feltételének. A ciklusmagban pedig biztosítanunk kell a feltétel hamissá
+            válását, különben végtelen ciklust kapunk. </p>
+
+        <div class="containerStickynotes">
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>int bá = 0;
+while (bá &lt; 4)
+{
+    bá++;
+    Console.WriteLine($"Bá={bá}"); 
+}</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>Bá = 1<br> Bá = 2<br> Bá = 3<br> Bá = 4</p>
+                </div>
+            </div>
+
+
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>int i=0;
+int c=0;
+while (i &lt; 15)
+{
+    c=i * i;
+    i++;
+    if (c % 3==0)
+    {
+        Console.WriteLine($"{c} az {i}-ből"); 
+    } 
+}</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>0 az 1-ből<br> 9 az 4-ből<br> 36 az 7-ből<br> 81 az 10-ből<br> 144 az 13-ből</p>
+                </div>
+            </div>
+
+
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>string j = "";
+while (j!="aaaaa")
+{
+    Console.WriteLine($"{j.Length}-edik index stringel számolva");
+    j += "a";
+}</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>0-edik index stringel számolva<br> 1-edik index stringel számolva<br> 2-edik index stringel számolva<br> 3-edik index stringel számolva<br> 4-edik index stringel számolva</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <h4>Hátultesztelő ciklus</h4>
+        <p>A hátultesztelőciklust általában ellenőrzött adatbevitelre alkalmazzuk, azaz addig folytatjuk egy meghatározott adat bekérését, ameddig az előírt határok közé nem esik, tehát a bekérés addig ismétlődik, amíg hibás a kapott érték.</p>
+
+        <div class="containerStickynotes">
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>
+string[] magánhangzók = new string[] { "a", "á", "e", "é", "i", "í", "o", "ó", "ö", "ő", "u", "ú", "ü", "ű", "y" };
+string megadott;
+do
+{
+    Console.WriteLine("adjon meg egy magánhangzót");
+    megadott = Console.ReadLine();
+} while (magánhangzók.Contains(megadott));
+Console.WriteLine("ügyes vagy");
+                    </code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>Ha a felhasználó egy magánhangzót ad meg akkor a kimenet: "ügyes vagy", egyébként újrakéri</p>
+                </div>
+            </div>
+
+
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>int gyümiDb=324;
+do
+{
+    Console.WriteLine("gyümölcsöt adtam hozzá");
+    gyümiDb++;
+}while (gyümiDb &lt; 5);
+Console.WriteLine(gyümiDb);</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>325</p>
+                </div>
+            </div>
+
+
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>int gyümiDB=324;
+do
+{
+    Console.WriteLine("gyümölcsöt adtam hozzá");
+    gyümiDB++;
+} while (gyümiDB &lt; 330);
+Console.WriteLine(gyümiDB);</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>330</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <h4>Számláló ciklus(for)</h4>
+        <p>Akkor alkalmazzuk, ha egy tevékenységet előre megadott számszor kell végrehajtani. Ekkor a ciklusfejben a ciklusmag ismétlésének számát határozzuk meg. </p>
+
+        <div class="containerStickynotes">
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>int b = 12;
+for (int i = 0; i &lt; b; i++)
+{
+	Console.WriteLine("már majdnem 12");
+}</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>már majdnem 12 <br>már majdnem 12 <br>már majdnem 12 <br>már majdnem 12 <br>már majdnem 12 <br>már majdnem 12 <br>már majdnem 12 <br>már majdnem 12 <br>már majdnem 12 <br>már majdnem 12 <br>már majdnem 12 <br>már majdnem 12 <br></p>
+                </div>
+            </div>
+
+
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>int sadfghjkj = 0;
+for (int i = 0; i &lt; 8 ; i++)
+{
+    sadfghjkj++;
+}
+Console.WriteLine($"ennyiszer futott a sadfghjkj: {sadfghjkj}");</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>ennyiszer futott a sadfghjkj: 8</p>
+                </div>
+            </div>
+
+
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>string[] days = new[] { "hétfő", "kedd", "szerda", "csütörtök", "péntek", "szombat", "vasárnap" };
+for (int i = 0; i &lt; 7; i++)
+{
+	Console.WriteLine(days[i]);
+}</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>hétfő <br> kedd <br> szerda <br> csütörtök <br> péntek <br> szombat <br> vasárnap</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <h4>Bejáró ciklus(foreach)</h4>
+        <p>Egy speciális ciklus, amelyet pl. tömbök és listák elemeinek bejárására találtak ki. A ciklus annyiszor fog lefutni, ahány elemű a lista, és a ciklus indexének értéke mindig megegyezik a bejárandó elem éppen soronkövetkező elemének értékével</p>
+
+        <div class="containerStickynotes">
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>string[] days = new[] { "hétfő", "kedd", "szerda", "csütörtök", "péntek", "szombat", "vasárnap" };
+foreach (string i in days)
+{
+	Console.WriteLine(i);
+}</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>hétfő <br> kedd <br> szerda <br> csütörtök <br> péntek <br> szombat <br> vasárnap</p>
+                </div>
+            </div>
+
+
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>double[] nums = new[] { 3.0, 64.654, 34.2, 63.2, 6424.0, 3.1, 2.3 };
+double f = 0;
+foreach (double i in nums)
+{
+    f = f + (i/3.0);
+    Console.WriteLine($"{f}. {i}");
+}
+Console.WriteLine(f);</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>1. 3 <br> 22,5513333333333. 64,654 <br> 33,9513333333333. 34,2 <br> 55,018. 63,2 <br> 2196,35133333333. 6424 <br> 2197,38466666667. 3,1<br> 2198,15133333333. 2,3 <br> 2198,15133333333
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="pair">
+                <div class="stickynote">
+                    <h5>Kód:</h5>
+                    <code>int[] ints = new int[] { 2, 4, 7, 0, 8, 9, 1 };
+foreach (int i in ints)
+{
+    Console.WriteLine(i+8);
+}</code>
+                </div>
+
+                <div class="stickynote">
+                    <h5>Kimenet:</h5>
+                    <p>10 <br> 12 <br> 15 <br> 8 <br> 16 <br> 17 <br> 9
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="spaceholder"></div>
+</body>
+
+</html>

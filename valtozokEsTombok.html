@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,900;1,300&display=swap" rel="stylesheet">
+    <title>Változók és tömbök</title>
+    <script src="./app.js" defer></script>
+</head>
+
+<body>
+        <header>
+                <div class="container">
+                    <h1>Asztali alkalmazások</h1>
+                </div>
+        
+                <nav>
+                    <a href="./index.html">Föoldal</a>
+                    <a href="./valtozokEsTombok.html" class="active">Változók és tömbök</a>
+                    <a href="./joEsHibasProgram.html">Jó és hibás program</a>
+                    <a href="./vezerlesiSzerkezetek.html">Vezérlési szerkezetek</a>
+                </nav>
+            </header>
+        
+    <main>
+        <h2>Változók és tömbök</h2>
+        <h3>Változó típusok</h3>
+                <h4>Numerikus adatok</h4>
+                <ul>
+                    <li>Boolean (bool) -> <i>igaz vagy hamis értéket</i></li>
+                    <li>Byte (byte) -> <i>előjel nélküli 8 bit</i></li>
+                    <li>SByte (sbyte) -> <i>előjeles 8 bit</i></li>
+                    <li>Int16 (short) -> <i>előjeles 16 bit</i></li>
+                    <li>UInt16 (ushort) -> <i>előjel nélküli 16 bit</i></li>
+                    <li>Int32(int) -> <i>előjeles 32 bit</i></li>
+                    <li>UInt32 (uint) -> <i>előjel nélküli 32 bit</i></li>
+                    <li>Int64 (long) -> <i>előjeles 64 bit</i></li>
+                    <li>UInt64 (ulong) -> <i>előjel nélküli 64 bit</i></li>
+                    <li>Single (float) -> <i>32 bites lebegőpontos (nem csak egész szám)</i></li>
+                    <li>Double (double) -> <i>64 bites lebegőpontos (nem csak egész szám)</i></li>
+                    <li>Decimal (decimal) -> <i>128 bites lebegőpontos (nem csak egész szám)</i></li>
+
+                </ul>
+
+                <h4>String adatok</h4>
+                <ul>
+                    <li>Char (char)-> egy darab unicode karaktert tud tárolni (16 bit)</li>
+                    <li>String (string)-> unicode karakterek halmaza</li>
+                </ul>
+
+                <h3>Tömbök</h3>
+                <p>Előre megadott nagyságú adattároló struktúra. Homogén (csak egy típusú adatot tud tárolni).</p>
+                <h4>Nagyságának megadása:</h4>
+                <ul>
+                    <li>1.	int[] tomb
+                            tomb= new int[20] (20 db egész számnak van helye)
+                            </li>
+                    <li>2.	int[] tomb = new int [20]</li>
+                </ul>
+                <h4>Már az elején megadott adatok:</h4>
+                <ul>
+                    <li>int[] tomb= new int[5]{1,2,3,4,5}</li>
+                    <li>int[] tomb={1,2,3,4,5}
+                            A tömb elemeinek indexe mindig 0-val kezdődik, tehát ha van öt elemünk, akkor az elemeink indexei 0-4 között lesznek. Ez fontos, hogy ne referáljunk olyan elemekre, amik nincsenek a tömbben (IndexOutOfRange)
+                            </li>
+                </ul>     
+    </main>
+    
+    <div class="spaceholder"></div>
+</body>
+
+
+</html>
